@@ -56,23 +56,22 @@
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
-            justify-content: center; /* Centre les éléments */
+            justify-content: center;
             align-items: flex-start;
         }
 
         .video-block {
-            flex: 1 1 300px; /* Largeur min 300px */
-            max-width: 500px; /* Largeur max pour les horizontales */
+            flex: 1 1 300px;
+            max-width: 500px;
             background: #1e1e1e;
             padding: 15px;
             border-radius: 12px;
             border: 1px solid #333;
         }
 
-        /* SPÉCIAL POUR LA STORY (Verticale) */
         .video-block.story-mode {
-            flex: 0 1 300px; /* Ne grandit pas trop */
-            max-width: 280px; /* Largeur téléphone */
+            flex: 0 1 300px;
+            max-width: 280px;
         }
 
         .video-wrapper {
@@ -85,8 +84,8 @@
             margin-bottom: 15px;
         }
 
-        .aspect-16-9 { padding-bottom: 56.25%; } /* Format Paysage */
-        .aspect-9-16 { padding-bottom: 177.77%; } /* Format Portrait (Story) */
+        .aspect-16-9 { padding-bottom: 56.25%; }
+        .aspect-9-16 { padding-bottom: 177.77%; }
 
         .video-wrapper iframe, .video-wrapper video {
             position: absolute;
@@ -96,10 +95,8 @@
         .video-info h3 { margin: 0 0 5px 0; font-size: 16px; color: #fff; }
         .video-info p { margin: 0; font-size: 13px; color: #999; line-height: 1.4; }
 
-        /* --- VIDÉOS LARGEUR MAX (Aftermovie + Participation) --- */
-        .large-video-section {
-            margin-bottom: 40px;
-        }
+        /* --- VIDÉOS LARGEUR MAX --- */
+        .large-video-section { margin-bottom: 40px; }
         
         .large-video-container {
             width: 100%;
@@ -110,10 +107,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
-        .large-video-container video {
-            width: 100%;
-            display: block;
-        }
+        .large-video-container video { width: 100%; display: block; }
 
     </style>
 </head>
@@ -179,7 +173,7 @@
             <p style="margin-top: 15px;">Restitution dynamique des 24 heures de création, capturant l'ambiance, le stress et l'euphorie des participants.</p>
         </div>
 
-        <h2 class="section-title">Bonus : Ma Réalisation</h2>
+        <h2 class="section-title">Bonus : Ma Participation</h2>
         <div class="large-video-section">
             <div class="large-video-container">
                 <video controls poster="Assets/poster_particip.jpg">
@@ -187,8 +181,8 @@
                 </video>
             </div>
             <p style="margin-top: 15px;">
-                <strong>Titre du film :</strong> [Insérer Titre Ici]<br>
-                Court-métrage réalisé dans le cadre du concours. [Ajoute ici une petite phrase de description sur tes contraintes ou ton intention].
+                <strong>Titre du film : Tout ça pour ça</strong><br>
+                Court-métrage réalisé en 24h. Mise en scène d'une routine matinale sous haute tension. Travail rythmique sur le montage et le sound design pour immerger le spectateur dans le stress croissant du personnage, jusqu'à son départ au travail.
             </p>
         </div>
 
