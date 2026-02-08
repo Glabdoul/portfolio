@@ -1,104 +1,198 @@
-<section class="project-phase">
-    <h2 class="phase-title">Phase 1 : Campagne de Teasing</h2>
-    <p class="phase-desc">Scénarisation d'une enquête sur 3 semaines pour engager la communauté.</p>
-
-    <div class="video-grid">
-        <div class="video-card">
-            <div class="video-wrapper">
-                <video controls poster="Assets/poster-teaser.jpg">
-                    <source src="Assets/video1_teaser.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h3>01. Le Lancement</h3>
-            <p>Introduction de la "Cassette" et de l'univers rétro.</p>
-        </div>
-
-        <div class="video-card vertical-mode">
-            <div class="video-wrapper-vertical">
-                <video controls poster="Assets/poster-story.jpg">
-                    <source src="Assets/video2_story.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h3>02. L'Interaction</h3>
-            <p>Format Story pour engager l'audience sur Instagram.</p>
-        </div>
-
-        <div class="video-card">
-            <div class="video-wrapper">
-                <video controls poster="Assets/poster-vol.jpg">
-                    <source src="Assets/video3_vol.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h3>03. Le Vol</h3>
-            <p>Scénarisation du conflit pour booster les inscriptions.</p>
-        </div>
-    </div>
-</section>
-
-<section class="project-phase">
-    <h2 class="phase-title">Phase 2 : L'Aftermovie</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet : Rallye Vidéo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <div class="main-video-container">
-        <video controls class="main-video" poster="Assets/poster-aftermovie.jpg">
-            <source src="Assets/video4_aftermovie.mp4" type="video/mp4">
-        </video>
+    <style>
+        /* --- STYLE GLOBAL (DARK MODE) --- */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- TYPOGRAPHIE --- */
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 60px;
+            border-left: 3px solid #34D399; /* Vert Portfolio */
+            padding-left: 15px;
+        }
+
+        h2.section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 80px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+            color: #f5f5f5;
+        }
+
+        p { color: #ccc; font-size: 15px; }
+
+        /* --- GRILLE VIDÉOS (MIXTE) --- */
+        .grid-comm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center; /* Centre les éléments */
+            align-items: flex-start;
+        }
+
+        .video-block {
+            flex: 1 1 300px; /* Largeur min 300px */
+            max-width: 500px; /* Largeur max pour les horizontales */
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        /* SPÉCIAL POUR LA STORY (Verticale) */
+        .video-block.story-mode {
+            flex: 0 1 300px; /* Ne grandit pas trop */
+            max-width: 280px; /* Largeur téléphone */
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .aspect-16-9 { padding-bottom: 56.25%; } /* Format Paysage */
+        .aspect-9-16 { padding-bottom: 177.77%; } /* Format Portrait (Story) */
+
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .video-info h3 { margin: 0 0 5px 0; font-size: 16px; color: #fff; }
+        .video-info p { margin: 0; font-size: 13px; color: #999; line-height: 1.4; }
+
+        /* --- VIDÉOS LARGEUR MAX (Aftermovie + Participation) --- */
+        .large-video-section {
+            margin-bottom: 40px;
+        }
+        
+        .large-video-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .large-video-container video {
+            width: 100%;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>RALLYE VIDÉO 2026</h1>
+        <div class="subtitle">Campagne de Communication Transmédia & Organisation</div>
+
+        <h2 class="section-title">Phase 1 : La Campagne Teasing</h2>
+        <p style="margin-bottom: 40px; max-width: 700px;">
+            Stratégie narrative en trois temps pour engager la communauté étudiante avant l'événement. Le fil conducteur : une mystérieuse cassette VHS.
+        </p>
+
+        <div class="grid-comm">
+            
+            <div class="video-block">
+                <div class="video-wrapper aspect-16-9">
+                    <video controls poster="Assets/poster1.jpg">
+                        <source src="Assets/video1_teaser.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>01. Le Teaser de Lancement</h3>
+                    <p>Annonce de la thématique rétro. La cassette est introduite comme l'élément principal et fil conducteur des prochaines semaines.</p>
+                </div>
+            </div>
+
+            <div class="video-block story-mode">
+                <div class="video-wrapper aspect-9-16">
+                    <video controls poster="Assets/poster2.jpg">
+                        <source src="Assets/video2_story.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>02. L'Indice (Story)</h3>
+                    <p>Format vertical immersif. On insiste sur l'importance vitale de la cassette pour relancer l'interaction avec les étudiants via les sondages Instagram.</p>
+                </div>
+            </div>
+
+            <div class="video-block">
+                <div class="video-wrapper aspect-16-9">
+                    <video controls poster="Assets/poster3.jpg">
+                        <source src="Assets/video3_vol.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>03. Le Vol de la Cassette</h3>
+                    <p>Twist narratif : la cassette a été volée. Une vidéo de mise en scène pour créer l'urgence et mobiliser les dernières inscriptions.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Phase 2 : L'Aftermovie</h2>
+        <div class="large-video-section">
+            <div class="large-video-container">
+                <video controls poster="Assets/poster_aftermovie.jpg">
+                    <source src="Assets/video4_aftermovie.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p style="margin-top: 15px;">Restitution dynamique des 24 heures de création, capturant l'ambiance, le stress et l'euphorie des participants.</p>
+        </div>
+
+        <h2 class="section-title">Bonus : Ma Réalisation</h2>
+        <div class="large-video-section">
+            <div class="large-video-container">
+                <video controls poster="Assets/poster_particip.jpg">
+                    <source src="Assets/video5_perso.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p style="margin-top: 15px;">
+                <strong>Titre du film :</strong> [Insérer Titre Ici]<br>
+                Court-métrage réalisé dans le cadre du concours. [Ajoute ici une petite phrase de description sur tes contraintes ou ton intention].
+            </p>
+        </div>
+
     </div>
-</section>
 
-<style>
-    /* CSS POUR CETTE PAGE */
-    .project-phase { margin-bottom: 60px; }
-    .phase-title { font-size: 24px; margin-bottom: 10px; color: #fff; }
-    .phase-desc { color: #aaa; margin-bottom: 30px; max-width: 600px; }
-
-    /* GRILLE DE 3 VIDÉOS */
-    .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        align-items: start; /* Important pour aligner en haut malgré les hauteurs différentes */
-    }
-
-    .video-card h3 { font-size: 16px; margin-top: 15px; margin-bottom: 5px; color: #fff; }
-    .video-card p { font-size: 14px; color: #888; }
-
-    /* VIDÉOS HORIZONTALES (16:9) */
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* Ratio 16:9 */
-        height: 0;
-        overflow: hidden;
-        border-radius: 8px;
-        background: #000;
-    }
-    .video-wrapper video, .video-wrapper iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-    }
-
-    /* VIDÉO VERTICALE (9:16) - TYPE STORY */
-    /* On la contraint un peu pour qu'elle ne soit pas immense */
-    .video-wrapper-vertical {
-        position: relative;
-        padding-bottom: 177.77%; /* Ratio 9:16 */
-        height: 0;
-        overflow: hidden;
-        border-radius: 8px;
-        background: #000;
-        max-width: 250px; /* On limite sa largeur pour qu'elle ne prenne pas trop de place */
-        margin: 0 auto; /* Centré */
-    }
-    .video-wrapper-vertical video {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-    }
-
-    /* AFTERMOVIE (PLEINE LARGEUR) */
-    .main-video-container {
-        width: 100%;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .main-video { width: 100%; display: block; }
-</style>
+</body>
+</html>
