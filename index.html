@@ -74,6 +74,27 @@
                 grid-column: span 2 / span 2;
             }
         }
+        
+        .placeholder-container {
+            aspect-ratio: 16 / 9;
+            background-color: #18181b;
+            border: 2px dashed #333;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .placeholder-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased">
@@ -123,6 +144,7 @@
                 <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout</button>
                 <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Multimédia & création de contenu</button>
                 <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Fiction</button>
+                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Alternance</button>
                 <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
             </div>
 
@@ -151,6 +173,19 @@
                     <div>
                         <span class="text-xs font-bold tracking-widest text-primary-green uppercase">Multimédia & création de contenu</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Rallye Vidéo</h3>
+                    </div>
+                </a>
+
+                <!-- Game & Vibes - Multimédia & création de contenu -->
+                <a href="projects/game-and-vibes.html" class="project-card group block fade-in" data-category="media">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/GV_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-green uppercase">Multimédia & création de contenu</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Game & Vibes</h3>
                     </div>
                 </a>
 
@@ -232,16 +267,59 @@
                     </div>
                 </a>
 
-                <!-- Game & Vibes - Multimédia & création de contenu -->
-                <a href="projects/game-and-vibes.html" class="project-card group block fade-in" data-category="media">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
-                        <video autoplay loop muted playsinline class="card-media">
-                            <source src="Assets/GV_1.mp4" type="video/mp4">
-                        </video>
+                <!-- Projet de fin d'étude - Fiction -->
+                <a href="projects/projet-fin-d-etude.html" class="project-card group block fade-in" data-category="fiction">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
+                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Vidéo à ajouter</p>
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-primary-green uppercase">Multimédia & création de contenu</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Game & Vibes</h3>
+                        <span class="text-xs font-bold tracking-widest text-primary-blue uppercase">Fiction</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Projet de fin d'étude</h3>
+                    </div>
+                </a>
+
+                <!-- E-learning - Alternance -->
+                <a href="projects/e-learning.html" class="project-card group block fade-in" data-category="alternance">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
+                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Vidéo à ajouter</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">E-learning</h3>
+                    </div>
+                </a>
+
+                <!-- Teasers - Alternance -->
+                <a href="projects/teasers.html" class="project-card group block fade-in" data-category="alternance">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
+                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Vidéo à ajouter</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Teasers</h3>
+                    </div>
+                </a>
+
+                <!-- Interviews - Alternance -->
+                <a href="projects/interviews.html" class="project-card group block fade-in" data-category="alternance">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
+                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Vidéo à ajouter</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Interviews</h3>
                     </div>
                 </a>
 
