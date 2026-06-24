@@ -56,6 +56,92 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 16px;
         }
+        
+        .work-in-progress {
+            background-color: rgba(251, 146, 60, 0.1);
+            border: 1px solid rgba(251, 146, 60, 0.3);
+            color: #FB923C;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+        
+        .work-in-progress svg {
+            width: 14px;
+            height: 14px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .video-card {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background-color: #18181b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-card .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+        
+        .video-card .play-overlay svg {
+            width: 24px;
+            height: 24px;
+            fill: #121212;
+            margin-left: 3px;
+        }
+        
+        .video-card .title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 16px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -72,11 +158,17 @@
     <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
         
         <header class="mb-16">
+            <div class="work-in-progress">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Page en cours de création
+            </div>
             <span class="text-primary-purple font-bold tracking-widest uppercase text-xs mb-2 block">Alternance - Azur Massages</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Teasers</h1>
             
             <p class="text-zinc-400 leading-relaxed mb-8">
-                Tournage lors des jours de cours, montage, destination des réseaux sociaux donc ciblage spécifique pour promouvoir les formations du centre Azur Massages.
+                Réalisation de teasers promotionnels pour le centre Azur Massages. Ces contenus courts et percutants, spécialement conçus pour les réseaux sociaux, visent à promouvoir les formations auprès des futurs étudiants en mettant en avant l'ambiance, les démonstrations pratiques et les témoignages.
             </p>
             
             <!-- Placeholder pour la vidéo principale -->
@@ -112,7 +204,7 @@
             <div class="md:col-span-6">
                 <h2 class="text-2xl font-bold mb-6 text-white">Le Concept</h2>
                 <p class="text-zinc-400 leading-relaxed mb-6">
-                    Création de teasers dynamiques pour promouvoir les formations du centre Azur Massages sur les réseaux sociaux. L'objectif était de capter l'attention rapidement et de donner envie d'en savoir plus.
+                    Création de teasers dynamiques pour promouvoir les formations du centre Azur Massages sur les réseaux sociaux. L'objectif était de capter l'attention rapidement et de donner envie d'en savoir plus sur les programmes proposés.
                 </p>
             </div>
             
@@ -144,24 +236,33 @@
         <!-- Section pour vidéos supplémentaires -->
         <section class="mb-24">
             <h3 class="text-xl font-bold mb-8">Vidéos du projet</h3>
-            <div class="placeholder-grid">
-                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
-                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                    <p class="text-sm">Teaser 1 à ajouter</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Teaser Etirements -->
+                <div class="video-card">
+                    <video controls poster="../Assets/Teaser Etirements.jpg">
+                        <source src="../Assets/Teaser Etirements.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <div class="title-overlay">Teaser Étirements</div>
                 </div>
-                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
-                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                    <p class="text-sm">Teaser 2 à ajouter</p>
-                </div>
-                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
-                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                    <p class="text-sm">Teaser 3 à ajouter</p>
+                
+                <!-- Teaser Suédois -->
+                <div class="video-card">
+                    <video controls poster="../Assets/Teaser suedois.jpg">
+                        <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <div class="title-overlay">Teaser Suédois</div>
                 </div>
             </div>
         </section>
