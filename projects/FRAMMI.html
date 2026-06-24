@@ -49,24 +49,26 @@
             <span class="text-primary-green font-bold tracking-widest uppercase text-xs mb-2 block">Multimédia & création de contenu</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-8">FRAMMI Awards</h1>
             
-            <!-- Vidéo principale -->
-            <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black mb-8">
-                <video controls class="w-full h-auto">
-                    <source src="../Assets/FRAMMI_1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-            </div>
-            
-            <!-- 4 vidéos en 2x2 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-black">
-                    <video controls class="w-full h-auto">
+            <!-- 2 vidéos sur la 1ère ligne -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+                <div class="portrait-video-container shadow-2xl">
+                    <video controls class="w-full h-full">
+                        <source src="../Assets/FRAMMI_1.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+                <div class="portrait-video-container shadow-2xl">
+                    <video controls class="w-full h-full">
                         <source src="../Assets/FRAMMI_2.mp4" type="video/mp4">
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-black">
-                    <video controls class="w-full h-auto">
+            </div>
+            
+            <!-- FRAMMI_3 en dessous, centrée -->
+            <div class="flex justify-center mb-8">
+                <div class="portrait-video-container shadow-2xl max-w-md w-full">
+                    <video controls class="w-full h-full">
                         <source src="../Assets/FRAMMI_3.mp4" type="video/mp4">
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
