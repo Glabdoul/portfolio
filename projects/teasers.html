@@ -31,10 +31,10 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
         .placeholder-container {
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 9 / 16;
             background-color: #18181b;
             border: 2px dashed #333;
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,60 +51,24 @@
             opacity: 0.5;
         }
         
-        .placeholder-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
-        }
-        
-        .work-in-progress {
-            background-color: rgba(251, 146, 60, 0.1);
-            border: 1px solid rgba(251, 146, 60, 0.3);
-            color: #FB923C;
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-size: 12px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 24px;
-        }
-        
-        .work-in-progress svg {
-            width: 14px;
-            height: 14px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .video-card {
+        /* Conteneur pour vidéos portrait */
+        .portrait-video-container {
             position: relative;
-            aspect-ratio: 16 / 9;
-            background-color: #18181b;
-            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background-color: #000;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
         
-        .video-card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-4px);
-        }
-        
-        .video-card video {
+        .portrait-video-container video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
-        .video-card .play-overlay {
+        .portrait-video-container .play-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -120,46 +84,15 @@
             transition: opacity 0.3s ease;
         }
         
-        .video-card:hover .play-overlay {
+        .portrait-video-container:hover .play-overlay {
             opacity: 1;
         }
         
-        .video-card .play-overlay svg {
+        .portrait-video-container .play-overlay svg {
             width: 24px;
             height: 24px;
             fill: #121212;
             margin-left: 3px;
-        }
-        
-        .video-card .title-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            padding: 16px;
-            color: white;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        /* Vidéo principale en PORTRAIT (9/16) */
-        .main-video-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            aspect-ratio: 9 / 16;
-            background-color: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .main-video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     </style>
 </head>
@@ -179,20 +112,47 @@
         <header class="mb-16 text-center">
             <span class="text-primary-purple font-bold tracking-widest uppercase text-xs mb-2 block">Alternance - Azur Massages</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Teasers</h1>
-            
-            <p class="text-zinc-400 leading-relaxed mb-8 max-w-2xl mx-auto">
-                Réalisation de teasers promotionnels pour le centre Azur Massages. Ces contenus courts et percutants, spécialement conçus pour les réseaux sociaux, visent à promouvoir les formations auprès des futurs étudiants en mettant en avant l'ambiance, les démonstrations pratiques et les témoignages.
-            </p>
-            
-            <!-- Vidéo principale en PORTRAIT -->
-            <div class="main-video-container shadow-2xl">
-                <video controls poster="../Assets/Teaser Suédois.jpg">
-                    <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-            </div>
         </header>
 
+        <!-- 2 vidéos en haut côte à côte -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Teaser Suédois -->
+                <div class="portrait-video-container shadow-2xl">
+                    <video controls poster="../Assets/Teaser suedois.jpg">
+                        <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Teaser Étirements -->
+                <div class="portrait-video-container shadow-2xl">
+                    <video controls poster="../Assets/Teaser Etirements.jpg">
+                        <source src="../Assets/Teaser Etirements.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explications -->
+        <section class="mb-16 max-w-4xl mx-auto">
+            <p class="text-zinc-400 leading-relaxed text-lg">
+                Teasers pour promouvoir les modules des formations proposés par l'école Azur Massages.
+            </p>
+        </section>
+
+        <!-- Détails techniques -->
         <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8 max-w-4xl mx-auto">
             <div>
                 <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Rôle</h3>
@@ -209,73 +169,6 @@
             <div>
                 <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Cible</h3>
                 <p class="text-base font-medium">Futurs étudiants</p>
-            </div>
-        </section>
-
-        <section class="grid md:grid-cols-12 gap-12 mb-24 max-w-5xl mx-auto">
-            <div class="md:col-span-6">
-                <h2 class="text-2xl font-bold mb-6 text-white">Le Concept</h2>
-                <p class="text-zinc-400 leading-relaxed mb-6">
-                    Création de teasers dynamiques pour promouvoir les formations du centre Azur Massages sur les réseaux sociaux. L'objectif était de capter l'attention rapidement et de donner envie d'en savoir plus sur les programmes proposés.
-                </p>
-            </div>
-            
-            <div class="md:col-span-6">
-                <h2 class="text-2xl font-bold mb-6 text-white">Détails de Production</h2>
-                <ul class="space-y-6">
-                    <li>
-                        <strong class="block text-white mb-1">Tournage</strong>
-                        <p class="text-zinc-400 leading-relaxed">
-                            Capture des moments clés lors des journées de formation : démonstrations, ambiance, témoignages.
-                        </p>
-                    </li>
-                    <li>
-                        <strong class="block text-white mb-1">Montage</strong>
-                        <p class="text-zinc-400 leading-relaxed">
-                            Montage rapide et dynamique adapté aux réseaux sociaux, avec musique entraînante et texte d'accroche.
-                        </p>
-                    </li>
-                    <li>
-                        <strong class="block text-white mb-1">Ciblage</strong>
-                        <p class="text-zinc-400 leading-relaxed">
-                            Adaptation du contenu pour les différentes plateformes (Instagram, Facebook, TikTok) et publics cibles.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section pour vidéos supplémentaires -->
-        <section class="mb-24">
-            <h3 class="text-xl font-bold mb-8 text-center">Vidéos du projet</h3>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Teaser Etirements -->
-                <div class="video-card">
-                    <video controls poster="../Assets/Teaser Etirements.jpg">
-                        <source src="../Assets/Teaser Etirements.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="title-overlay">Teaser Étirements</div>
-                </div>
-                
-                <!-- Teaser Suédois -->
-                <div class="video-card">
-                    <video controls poster="../Assets/Teaser suedois.jpg">
-                        <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="title-overlay">Teaser Suédois</div>
-                </div>
             </div>
         </section>
 
