@@ -142,6 +142,24 @@
             font-weight: 600;
             font-size: 14px;
         }
+        
+        /* Vidéo principale en grand */
+        .main-video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .main-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -158,12 +176,6 @@
     <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
         
         <header class="mb-16">
-            <div class="work-in-progress">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Page en cours de création
-            </div>
             <span class="text-primary-purple font-bold tracking-widest uppercase text-xs mb-2 block">Alternance - Azur Massages</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Teasers</h1>
             
@@ -171,13 +183,12 @@
                 Réalisation de teasers promotionnels pour le centre Azur Massages. Ces contenus courts et percutants, spécialement conçus pour les réseaux sociaux, visent à promouvoir les formations auprès des futurs étudiants en mettant en avant l'ambiance, les démonstrations pratiques et les témoignages.
             </p>
             
-            <!-- Placeholder pour la vidéo principale -->
-            <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black placeholder-container">
-                <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                </svg>
-                <p class="text-sm">Vidéo principale à ajouter</p>
-                <p class="text-xs text-white/30 mt-1">Remplacez ce placeholder par votre vidéo</p>
+            <!-- Vidéo principale en grand -->
+            <div class="main-video-container shadow-2xl">
+                <video controls poster="../Assets/Teaser Suédois.jpg">
+                    <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
             </div>
         </header>
 
