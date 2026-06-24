@@ -95,6 +95,22 @@
             margin-bottom: 12px;
             opacity: 0.5;
         }
+        
+        /* Format portrait pour les vidéos principales */
+        .portrait-container {
+            aspect-ratio: 9 / 16;
+            background-color: #121212;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+        }
+        
+        .portrait-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased">
@@ -119,7 +135,44 @@
         
         <div class="w-full h-px bg-white/10 mb-16"></div>
 
-        <!-- PROJET MISE EN AVANT : Au-delà du vide -->
+        <!-- VIDÉOS PRINCIPALES : Teaser et Interviews en grand format portrait -->
+        <section class="mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Teaser -->
+                <a href="projects/teasers.html" class="group block">
+                    <div class="portrait-container border border-white/5 shadow-2xl hover:border-white/20 transition-all">
+                        <video autoplay loop muted playsinline class="portrait-media">
+                            <source src="Assets/Teaser Suédois.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs font-bold tracking-widest text-primary-purple uppercase bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Teasers</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-3">Teasers Promotionnels</h2>
+                            <p class="text-text-muted mt-1 text-base">Azur Massages - Alternance</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Interviews -->
+                <a href="projects/interviews.html" class="group block">
+                    <div class="portrait-container border border-white/5 shadow-2xl hover:border-white/20 transition-all">
+                        <video autoplay loop muted playsinline class="portrait-media">
+                            <source src="Assets/Alexandre.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs font-bold tracking-widest text-primary-purple uppercase bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Interviews</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white mt-3">Interviews Étudiants</h2>
+                            <p class="text-text-muted mt-1 text-base">Azur Massages - Alternance</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- PROJETS MISE EN AVANT -->
+        
+        <!-- Au-delà du vide -->
         <section class="mb-24">
             <a href="projects/au-dela-du-vide.html" class="group block">
                 <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl mb-8">
@@ -138,6 +191,25 @@
             </a>
         </section>
 
+        <!-- Dompteur Dompté -->
+        <section class="mb-24">
+            <a href="projects/dompteur-dompte.html" class="group block">
+                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl mb-8">
+                    <div class="card-media-container">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/Dompteur Dompté.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8">
+                        <span class="text-xs font-bold tracking-widest text-primary-orange uppercase bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Projet mis en avant</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4">Dompteur Dompté</h2>
+                        <p class="text-text-muted mt-2 text-lg">Projet de fin d'études - Fiction</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+
         <section id="work" class="mb-32">
             
             <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
@@ -149,6 +221,32 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
+
+                <!-- Au-delà du vide - Fiction (dans la liste) -->
+                <a href="projects/au-dela-du-vide.html" class="project-card group block fade-in" data-category="fiction">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/CM.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-blue uppercase">Fiction</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Au-delà du vide</h3>
+                    </div>
+                </a>
+
+                <!-- Dompteur Dompté - Fiction (dans la liste) -->
+                <a href="projects/dompteur-dompte.html" class="project-card group block fade-in" data-category="fiction">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/Dompteur Dompté.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-blue uppercase">Fiction</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Dompteur Dompté</h3>
+                    </div>
+                </a>
 
                 <!-- FRAMMI Awards - Multimédia & création de contenu -->
                 <a href="projects/FRAMMI.html" class="project-card group block fade-in" data-category="media">
@@ -267,17 +365,29 @@
                     </div>
                 </a>
 
-                <!-- Projet de fin d'étude - Fiction -->
-                <a href="projects/projet-fin-d-etude.html" class="project-card group block fade-in" data-category="fiction">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
-                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                        </svg>
-                        <p class="text-sm">Vidéo à ajouter</p>
+                <!-- Teasers - Alternance -->
+                <a href="projects/teasers.html" class="project-card group block fade-in" data-category="alternance">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/Teaser Suédois.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div>
-                        <span class="text-xs font-bold tracking-widest text-primary-blue uppercase">Fiction</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Projet de fin d'étude</h3>
+                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Teasers</h3>
+                    </div>
+                </a>
+
+                <!-- Interviews - Alternance -->
+                <a href="projects/interviews.html" class="project-card group block fade-in" data-category="alternance">
+                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4">
+                        <video autoplay loop muted playsinline class="card-media">
+                            <source src="Assets/Alexandre.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
+                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Interviews</h3>
                     </div>
                 </a>
 
@@ -292,34 +402,6 @@
                     <div>
                         <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
                         <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">E-learning</h3>
-                    </div>
-                </a>
-
-                <!-- Teasers - Alternance -->
-                <a href="projects/teasers.html" class="project-card group block fade-in" data-category="alternance">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
-                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                        </svg>
-                        <p class="text-sm">Vidéo à ajouter</p>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Teasers</h3>
-                    </div>
-                </a>
-
-                <!-- Interviews - Alternance -->
-                <a href="projects/interviews.html" class="project-card group block fade-in" data-category="alternance">
-                    <div class="card-media-container rounded-xl border border-white/5 group-hover:border-white/20 transition-all mb-4 placeholder-container">
-                        <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                        </svg>
-                        <p class="text-sm">Vidéo à ajouter</p>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold tracking-widest text-primary-purple uppercase">Alternance</span>
-                        <h3 class="text-xl font-bold text-white mt-1 group-hover:underline decoration-white/30 underline-offset-4 transition-all">Interviews</h3>
                     </div>
                 </a>
 
