@@ -143,16 +143,17 @@
             font-size: 14px;
         }
         
-        /* Vidéo principale en grand */
+        /* Vidéo principale en PORTRAIT (9/16) */
         .main-video-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            aspect-ratio: 9 / 16;
             background-color: #000;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 2rem;
         }
         
         .main-video-container video {
@@ -175,15 +176,15 @@
 
     <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
         
-        <header class="mb-16">
+        <header class="mb-16 text-center">
             <span class="text-primary-purple font-bold tracking-widest uppercase text-xs mb-2 block">Alternance - Azur Massages</span>
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Teasers</h1>
             
-            <p class="text-zinc-400 leading-relaxed mb-8">
+            <p class="text-zinc-400 leading-relaxed mb-8 max-w-2xl mx-auto">
                 Réalisation de teasers promotionnels pour le centre Azur Massages. Ces contenus courts et percutants, spécialement conçus pour les réseaux sociaux, visent à promouvoir les formations auprès des futurs étudiants en mettant en avant l'ambiance, les démonstrations pratiques et les témoignages.
             </p>
             
-            <!-- Vidéo principale en grand -->
+            <!-- Vidéo principale en PORTRAIT -->
             <div class="main-video-container shadow-2xl">
                 <video controls poster="../Assets/Teaser Suédois.jpg">
                     <source src="../Assets/Teaser Suédois.mp4" type="video/mp4">
@@ -192,7 +193,7 @@
             </div>
         </header>
 
-        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8">
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8 max-w-4xl mx-auto">
             <div>
                 <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Rôle</h3>
                 <p class="text-base font-medium">Tournage, Montage</p>
@@ -211,7 +212,7 @@
             </div>
         </section>
 
-        <section class="grid md:grid-cols-12 gap-12 mb-24">
+        <section class="grid md:grid-cols-12 gap-12 mb-24 max-w-5xl mx-auto">
             <div class="md:col-span-6">
                 <h2 class="text-2xl font-bold mb-6 text-white">Le Concept</h2>
                 <p class="text-zinc-400 leading-relaxed mb-6">
@@ -246,8 +247,8 @@
 
         <!-- Section pour vidéos supplémentaires -->
         <section class="mb-24">
-            <h3 class="text-xl font-bold mb-8">Vidéos du projet</h3>
-            <div class="grid md:grid-cols-2 gap-8">
+            <h3 class="text-xl font-bold mb-8 text-center">Vidéos du projet</h3>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Teaser Etirements -->
                 <div class="video-card">
                     <video controls poster="../Assets/Teaser Etirements.jpg">
