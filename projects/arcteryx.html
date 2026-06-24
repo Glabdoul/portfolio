@@ -8,7 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { 'bg-main': '#121212', 'bg-card': '#18181b', 'text-main': '#EDEDED' } } }
+            theme: { 
+                extend: { 
+                    colors: {
+                        'bg-main': '#121212',
+                        'bg-card': '#18181b', 
+                        'text-main': '#EDEDED',
+                        'text-muted': '#A1A1AA',
+                        'primary-orange': '#FB923C',
+                        'primary-green': '#34D399',
+                        'primary-blue': '#60A5FA',
+                        'primary-purple': '#C084FC',
+                        'primary-pink': '#FB7185',
+                    }
+                }
+            }
         }
     </script>
     <style>
@@ -31,8 +45,8 @@
     <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
         
         <header class="mb-16">
-            <span class="text-rose-400 font-bold tracking-widest uppercase text-xs mb-2 block">Photographie • Direction Artistique</span>
-            <h1 class="text-4xl md:text-5xl font-bold mb-8">Campagne Arc'teryx</h1>
+            <span class="text-primary-pink font-bold tracking-widest uppercase text-xs mb-2 block">Photo</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Arc'teryx</h1>
             
             <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
                 <img src="../Assets/PHOTO_DA.jpg" alt="Campagne Arc'teryx" class="w-full h-auto object-cover">

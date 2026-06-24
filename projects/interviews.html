@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviews | Lucas Matthes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { 
+                extend: { 
+                    colors: {
+                        'bg-main': '#121212',
+                        'bg-card': '#18181b', 
+                        'text-main': '#EDEDED',
+                        'text-muted': '#A1A1AA',
+                        'primary-orange': '#FB923C',
+                        'primary-green': '#34D399',
+                        'primary-blue': '#60A5FA',
+                        'primary-purple': '#C084FC',
+                        'primary-pink': '#FB7185',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #121212; color: #EDEDED; font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .placeholder-container {
+            aspect-ratio: 16 / 9;
+            background-color: #18181b;
+            border: 2px dashed #333;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .placeholder-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+        
+        .placeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="max-w-6xl mx-auto px-6 py-10">
+        <a href="../index.html" class="text-white/50 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium w-max">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Retour au portfolio
+        </a>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pb-24 fade-in">
+        
+        <header class="mb-16">
+            <span class="text-primary-purple font-bold tracking-widest uppercase text-xs mb-2 block">Alternance - Azur Massages</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Interviews</h1>
+            
+            <p class="text-zinc-400 leading-relaxed mb-8">
+                Tournage d'interviews, montage, destination les réseaux sociaux donc ciblage pour mettre en avant les témoignages des étudiants et formateurs du centre Azur Massages.
+            </p>
+            
+            <!-- Placeholder pour la vidéo principale -->
+            <div class="w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black placeholder-container">
+                <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <p class="text-sm">Vidéo principale à ajouter</p>
+                <p class="text-xs text-white/30 mt-1">Remplacez ce placeholder par votre vidéo</p>
+            </div>
+        </header>
+
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-white/10 py-8">
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Rôle</h3>
+                <p class="text-base font-medium">Tournage, Montage</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Type</h3>
+                <p class="text-base font-medium">Interviews</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Destination</h3>
+                <p class="text-base font-medium">Réseaux sociaux</p>
+            </div>
+            <div>
+                <h3 class="text-white/40 uppercase text-[10px] font-bold tracking-widest mb-1">Cible</h3>
+                <p class="text-base font-medium">Communauté</p>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-12 gap-12 mb-24">
+            <div class="md:col-span-6">
+                <h2 class="text-2xl font-bold mb-6 text-white">Le Concept</h2>
+                <p class="text-zinc-400 leading-relaxed mb-6">
+                    Réalisation d'interviews des étudiants et formateurs du centre Azur Massages. L'objectif était de recueillir des témoignages authentiques pour promouvoir la qualité des formations.
+                </p>
+            </div>
+            
+            <div class="md:col-span-6">
+                <h2 class="text-2xl font-bold mb-6 text-white">Détails de Production</h2>
+                <ul class="space-y-6">
+                    <li>
+                        <strong class="block text-white mb-1">Tournage</strong>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Interviews en situation réelle : dans les salles de cours, pendant les démonstrations pratiques, ou en extérieur.
+                        </p>
+                    </li>
+                    <li>
+                        <strong class="block text-white mb-1">Montage</strong>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Sélection des meilleurs moments, ajout de sous-titres, et intégration d'éléments graphiques pour renforcer le message.
+                        </p>
+                    </li>
+                    <li>
+                        <strong class="block text-white mb-1">Ciblage</strong>
+                        <p class="text-zinc-400 leading-relaxed">
+                            Adaptation du format et du contenu pour les réseaux sociaux : versions courtes pour Instagram, plus longues pour YouTube.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section pour vidéos supplémentaires -->
+        <section class="mb-24">
+            <h3 class="text-xl font-bold mb-8">Vidéos du projet</h3>
+            <div class="placeholder-grid">
+                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
+                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-sm">Interview 1 à ajouter</p>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
+                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-sm">Interview 2 à ajouter</p>
+                </div>
+                <div class="rounded-xl overflow-hidden border border-white/10 placeholder-container">
+                    <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <p class="text-sm">Interview 3 à ajouter</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-white/10 pt-16 text-center">
+            <h3 class="text-2xl font-bold mb-6">Voir d'autres projets</h3>
+            <div class="flex justify-center gap-4">
+                <a href="../index.html" class="px-8 py-3 bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 rounded-full transition-all font-medium text-sm">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
