@@ -65,7 +65,7 @@
         <!-- Au-delà du vide -->
         <section class="mb-24">
             <a href="projects/au-dela-du-vide.html" class="group block">
-                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl mb-8">
+                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-lg mb-8">
                     <div class="card-media-container">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/CM.mp4" type="video/mp4">
@@ -84,7 +84,7 @@
         <!-- Dompteur Dompté -->
         <section class="mb-24">
             <a href="projects/dompteur-dompte.html" class="group block">
-                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl mb-8">
+                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-lg mb-8">
                     <div class="card-media-container">
                         <video autoplay loop muted playsinline class="card-media">
                             <source src="Assets/Dompteur Dompté.mp4" type="video/mp4">
@@ -103,11 +103,11 @@
         <section id="work" class="mb-32">
             
             <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-12">
-                <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all">Tout</button>
-                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Multimédia & création de contenu</button>
-                <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Fiction</button>
-                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Alternance</button>
-                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all">Photo</button>
+                <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white text-black transition-all" data-category="all">Tout</button>
+                <button onclick="filterProjects('media')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="media">Multimédia & création de contenu</button>
+                <button onclick="filterProjects('fiction')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="fiction">Fiction</button>
+                <button onclick="filterProjects('alternance')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="alternance">Alternance</button>
+                <button onclick="filterProjects('photo')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-white/10 bg-transparent text-text-muted hover:text-white hover:border-white/20 transition-all" data-category="photo">Photo</button>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
@@ -338,16 +338,27 @@
 
     <script>
         function filterProjects(category) {
-            // 1. Gestion des boutons (Style actif/inactif)
+            // 1. Gestion des boutons (Style actif/inactif avec couleur de catégorie)
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('bg-white', 'text-black');
+                btn.classList.remove('bg-white', 'text-black', 'bg-primary-orange', 'bg-primary-green', 'bg-primary-blue', 'bg-primary-purple', 'bg-primary-pink', 'text-white');
                 btn.classList.add('bg-transparent', 'text-text-muted');
                 
-                // Si le bouton cliqué correspond à la catégorie, on l'active
+                // Si le bouton cliqué correspond à la catégorie, on l'active avec la bonne couleur
                 if (btn.getAttribute('onclick').includes(`'${category}'`)) {
                     btn.classList.remove('bg-transparent', 'text-text-muted');
-                    btn.classList.add('bg-white', 'text-black');
+                    
+                    // Appliquer la couleur en fonction de la catégorie
+                    const categoryColors = {
+                        'all': 'bg-white text-black',
+                        'media': 'bg-primary-green text-black',
+                        'fiction': 'bg-primary-blue text-black',
+                        'alternance': 'bg-primary-purple text-black',
+                        'photo': 'bg-primary-pink text-black'
+                    };
+                    
+                    const colorClass = categoryColors[category] || 'bg-white text-black';
+                    btn.classList.add(...colorClass.split(' '));
                 }
             });
 
